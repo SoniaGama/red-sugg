@@ -11,8 +11,10 @@ background-color: #755496;
 height: 100vh;
 }
 
-.imagotipo {
-width: 10%;
+.imagotipo-index {
+  padding-top: 80px;
+  padding-bottom: 30px;
+width: 100%;
 /*padding-top: 22vh;
 padding-bottom: 5vh;*/
 }
@@ -144,6 +146,13 @@ cursor: pointer;
 .avatar-mini {
 width: 11%;
 }
+
+/*Estilos para la sección de amigos*/
+
+.margin-top {
+  margin-top: 10vh;
+}
+
 /*Estilos para seccion de newsfeed*/
 
 #comment {
@@ -182,7 +191,6 @@ padding-top: 5px;
 .sugg-friend>p>span {
 font-size: 20px;
 }
-
 
 /*Estilos para la seccion de buscar amigos por medio del filtro*/
 
@@ -224,6 +232,9 @@ opacity: 0;
 /* #recomendacion {
 width: 80%;
 } */
+
+
+
 /*Estilos para seccion de recommendacion */
 .location {
     background-color: #523470;
