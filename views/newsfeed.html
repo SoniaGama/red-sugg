@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Dosis" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/vendors/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Sugg</title>
+</head>
+
+<body>
+
+    <!--Aquí va todo el contenido del header-->
+    <section class="background-header header">
+        <section class="container">
+            <header class="row margin">
+                <!--Iconos para la sección de newsfeed-->
+                <div class="margin col-xs-3 col-sm-2 col-md-3 col-lg-2 logo-and-user imagotipo"><img class="width100" src="../assets/images/imagotipo-morado.png" alt="imagotipo"></div>
+                <a href="profile.html"><img class="col-xs-2 col-sm-1 col-sm-offset-1 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 margin cursor avatar-mini" src="../assets/images/user-profile.png" alt="photoUser"></a>
+                <!--Iconos de notificaciones y menú desplegable-->
+                <a class="margin m-r col-xs-1 col-xs-offse col-sm-1 col-sm-offset-1 col-md-1 col-md-offset-2 col-lg-1" id="alert-friends" href=""><i class="fa fa-bell icons padding1opx" aria-hidden="true"></i></a>
+                <a class="margin col-xs-1 col-sm-1 col-sm-offset- col-md-1 col-lg-1" id="notificación-friends" href=""><i class="fa fa-clipboard icons padding1opx" aria-hidden="true"></i></a>
+                <menu class="icon-menu col-xs-4 col-sm-3 col-md-2 col-lg-2 tx-aling-rigth" type="context"><i id="menu-bars" class="fa fa-bars icon" aria-hidden="true"></i>
+                    <div class="row">
+                        <div class="col-xs-12 options hidden font-cabin">
+                            <a href=friends.html>
+                                <p>Mis amigos</p>
+                            </a>
+                            <a href="#">
+                                <p>Nuestras recomendaciones</p>
+                            </a>
+                            <a href="#">
+                                <p>Elementos guardados</p>
+                            </a>
+                            <a href="search-friends.html">
+                                <p>Buscar amigos</p>
+                            </a>
+                            <a href="#">
+                                <p>Solicitudes de amigos</p>
+                            </a>
+                            <a href="#">
+                                <p>Invitar amigos</p>
+                            </a>
+                            <a href="#">
+                                <p>Menú de ayuda</p>
+                            </a>
+                            <a href="#">
+                                <p>Configuración</p>
+                            </a>
+                            <a href="#">
+                                <p>Cerrar sesión</p>
+                            </a>
+                        </div>
+                    </div>
+                </menu>
+
+            </header>
+        </section>
+    </section>
+
+    <section class="container">
+      <section class="row">
+          <div class="col-xs-offset-7 select padding1opx">
+              <select name="" id="" class="padding5px">
+              <option value="">Lugares</option>
+              <option value="">Películas</option>
+              <option value="">Productos</option>
+            </select>
+          </div>
+      </section>
+
+      <!--Input de búsqueda de lugares-->
+      <section class="row filter-friends margin">
+          <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-7 col-lg-offset-2 filter">
+              <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">  <a id="search" href=""><i class="fa fa-search" aria-hidden="true"></i></a></span>
+                  <input type="text" class="form-control input-friend" placeholder="Busca la recomendación más cercana a ti" aria-describedby="basic-addon1">
+              </div>
+          </div>
+      </section>
+
+      <!--Aquí va el contenido de newfeed-->
+
+      <section id="container-comment" class="row margin">
+          <section class="row news">
+              <div class="col-xs-offset-3 col-xs-8 col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3 sugg-friend">
+                  <p><span>ROBERT</span> dio SUGG de este lugar</p>
+              </div>
+          </section>
+          <div id="image-publish" class="col-xs-offset-3 col-xs-8 col-sm-10 col-sm-offset-2 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 post-usser container-img">
+              <img class="img-helado" src="../assets/images/helado-oscuro.jpg" alt="lugar-recomendado">
+          </div>
+          <section class="row">
+              <section class="col-xs-offset-3 col-xs-8 col-sm-10 col-sm-offset-2 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 container-comment">
+                  <div id="container-sugg" class="col-xs-7">
+                      <p id="time">Wed Jan 31 2018</p>
+                      <p class="font-dosis" id="comment">Los helados en este lugar son una delicia, deben probarlos!</p>
+                  </div>
+                  <div class="col-xs-2 container-icons">
+                      <div class="row ">
+                          <a id="edit" href=""><i class="fa fa-pencil col-sm-3 col-xs-1" aria-hidden="true"></i></a>
+                          <a id="star" href=""><i class="fa fa-star col-sm-offset-4 col-sm-2 col-xs-1" aria-hidden="true"></i></a>
+                          <span class="col-sm-1 col-xs-1">1</span>
+                      </div>
+                  </div>
+
+              </section>
+          </section>
+      </section>
+
+      <section id="container-comment" class="row margin">
+          <section class="row">
+              <div class="col-xs-offset-3 col-xs-5 col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3 sugg-friend">
+                  <p><span>MAKY</span> dio SUGG de este lugar</p>
+              </div>
+          </section>
+          <div id="image-publish" class="col-xs-offset-3 col-xs-8 col-sm-10 col-sm-offset-2 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 post-usser container-img">
+              <img class="img-helado" src="../assets/images/la-pescaderia.jpg" alt="lugar-recomendado">
+          </div>
+          <section class="row">
+              <section class="col-xs-offset-3 col-xs-8 col-sm-10 col-sm-offset-2 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 container-comment">
+                  <div id="container-sugg" class="col-xs-7">
+                      <p id="time">Tue Jan 30 2018</p>
+                      <p class="font-dosis" id="comment">Super recomendado, lo que le sigue de rico</p>
+                  </div>
+                  <div class="col-xs-2 container-icons">
+                      <div class="row ">
+                          <a id="edit" href=""><i class="fa fa-pencil col-sm-3 col-xs-1" aria-hidden="true"></i></a>
+                          <a id="star" href=""><i class="fa fa-star col-sm-offset-4 col-sm-2 col-xs-1" aria-hidden="true"></i></a>
+                          <span class="col-sm-1 col-xs-1">1</span>
+                      </div>
+                  </div>
+
+              </section>
+          </section>
+      </section>
+
+      <section id="container-comment" class="row margin">
+          <section class="row news">
+              <div class="col-xs-offset-3 col-xs-8 col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-3 col-lg-5 col-lg-offset-3 sugg-friend">
+                  <p><span>LILI</span> dio SUGG de este lugar</p>
+              </div>
+          </section>
+          <div id="image-publish" class="col-xs-offset-3 col-xs-8 col-sm-10 col-sm-offset-2 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 post-usser container-img">
+              <img class="img-helado" src="../assets/images/pendulo.jpg" alt="lugar-recomendado">
+          </div>
+          <section class="row">
+              <section class="col-xs-offset-3 col-xs-8 col-sm-10 col-sm-offset-2 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3 container-comment">
+                  <div id="container-sugg" class="col-xs-7">
+                      <p id="time">Mon Jan 29 2018</p>
+                      <p class="font-dosis" id="comment">No hay nada más bonito, que tomarse un café en este lugar lleno de libros :D</p>
+                  </div>
+                  <div class="col-xs-2 container-icons">
+                      <div class="row ">
+                          <a id="edit" href=""><i class="fa fa-pencil col-sm-3 col-xs-1" aria-hidden="true"></i></a>
+                          <a id="star" href=""><i class="fa fa-star col-sm-offset-4 col-sm-2 col-xs-1" aria-hidden="true"></i></a>
+                          <span class="col-sm-1 col-xs-1">1</span>
+                      </div>
+                  </div>
+
+              </section>
+          </section>
+      </section>
+    </section>
+
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="../js/vendors/js/bootstrap.min.js"></script> -->
+    <!-- <script type="text/javascript" src="../js/vendors/jquery-3.3.1.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/data.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+
+
+</body>

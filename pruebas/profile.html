@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Dosis" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/vendors/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Sugg</title>
+</head>
+
+<body>
+
+
+
+    <!--Aquí va todo el contenido del header-->
+    <section class="background-header header">
+        <section class="container">
+            <header class="row margin">
+                <!--Iconos para la sección de newsfeed-->
+                <div class="hidden margin col-xs-3 col-sm-2 col-md-3 col-lg-2 logo-and-user imagotipo"><img class="width100" src="assets/images/imagotipo-morado.png" alt="imagotipo"></div>
+                <img class="hidden col-xs-2 col-sm-1 col-sm-offset-1 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 margin cursor avatar-mini" src="assets/images/user-profile.png" alt="photoUser">
+                <!--Iconos para la sección de perfil de usuario-->
+                <img class="show margin col-xs-3 col-sm-2 col-md-3 col-lg-2 logo-and-user avatar" src="assets/images/user-profile.png" alt="photoUser">
+                <div class="show col-xs-2 col-sm-1 col-sm-offset-1 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 margin"><img class="width100 p-b cursor logo-mini" src="assets/images/logo-morado.png" alt="logo"></div>
+                <!--Iconos de notificaciones y menú desplegable-->
+                <a class="margin m-r col-xs-1 col-xs-offse col-sm-1 col-sm-offset-1 col-md-1 col-md-offset-2 col-lg-1" id="alert-friends" href=""><i class="fa fa-bell icons padding1opx" aria-hidden="true"></i></a>
+                <a class="margin col-xs-1 col-sm-1 col-sm-offset- col-md-1 col-lg-1" id="notificación-friends" href=""><i class="fa fa-clipboard icons padding1opx" aria-hidden="true"></i></a>
+                <menu class="icon-menu col-xs-4 col-sm-3 col-md-2 col-lg-2 tx-aling-rigth" type="context"><i id="menu-bars" class="fa fa-bars icon" aria-hidden="true"></i>
+                    <div class="row">
+                        <div class="col-xs-12 options hidden font-cabin">
+                            <a href="#">
+                                <p>Mis amigos</p>
+                            </a>
+                            <a href="#">
+                                <p>Nuestras recomendaciones</p>
+                            </a>
+                            <a href="#">
+                                <p>Elementos guardados</p>
+                            </a>
+                            <a href="#">
+                                <p>Buscar amigos</p>
+                            </a>
+                            <a href="#">
+                                <p>Solicitudes de amigos</p>
+                            </a>
+                            <a href="#">
+                                <p>Invitar amigos</p>
+                            </a>
+                            <a href="#">
+                                <p>Menú de ayuda</p>
+                            </a>
+                            <a href="#">
+                                <p>Configuración</p>
+                            </a>
+                            <a href="#">
+                                <p>Cerrar sesión</p>
+                            </a>
+                        </div>
+                    </div>
+                </menu>
+
+            </header>
+        </section>
+    </section>
+
+    <!-- contenedor general -->
+    <section class="container height">
+
+        <!--Aquí va el select-->
+
+        <section class="row">
+            <div class="col-xs-offset-7 select padding1opx">
+                <select name="" id="" class="padding5px btn-default">
+                  <option value="">Lugares</option>
+                  <option value="">Películas</option>
+                  <option value="">Productos</option>
+                </select>
+            </div>
+        </section>
+
+
+
+        <!--Contenedor para que el usuario haga su post, esta sección se va a ocultar y/mostrar-->
+        <section class="row">
+            <textarea id="text-user" type="file" class="col-xs-offset-1 col-xs-10 margin" name="" id="recomendacion" placeholder="Escribe tu recomendación de hoy, y no olvides subir tu foto favorita del lugar!"></textarea>
+        </section>
+        <section class="row">
+          <input id="rating-scale" class="col-xs-offset-9 col-xs-2" type="number" name="" value="5" min="1" max="5">
+        </section>
+        <section class="row">
+
+          <div class="col-xs-offset-1 col-xs-10 recommendation font-cabin">
+
+               <div class="row location">
+                   <div class="col-xs-3">
+                       <a class="icon-location color-purple" href=""><i class="fa fa-map-marker" aria-hidden="true"></i> Mi ubicación</a>
+                   </div>
+                  <div class="col-xs-5">
+                   <label class=" image-form color-purple cursor">
+                      <i class="color-purple fa fa-file-image-o fa-lg" aria-hidden="true"></i>
+                      <span>Compartenos tu imágen </span>
+                      <input id="unload-fire-base" class="hidden btn btn-default" type="file" id="exampleInputFile" accept="image/*">
+                    </label>
+                  </div>
+                   <div class="col-xs-4">
+                       <input id="publish" class="btn btn-default btn-submit" type="submit" value="Publicar" disabled=true>
+                   </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- contenedor de publicaciones -->
+      <section class="row" id="container-publish">
+        <!-- <section class="margin col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-lg-offset-1 col-lg-10">
+          <img class="container-image" src="" alt="">
+        </section> -->
+
+        <!-- imagen creada dinamicamente -->
+
+            <!-- <section class="row margin">
+
+              <div class="image-publish col-xs-offset-1 col-xs-10 post-usser container-img">
+
+              </div>
+
+              <section class="container-comment col-xs-offset-1 col-xs-10">
+                <section class="row">
+                  <div class="container-sugg col-xs-10">
+                      <p class="time"></p>
+                      <p class="comment comment-prueba"></p>
+                  </div>
+                  <div class="col-xs-2 container-icons">
+                    <div class="row">
+                      <a class="edit" href=""><i class="fa fa-pencil col-sm-3 col-xs-1" aria-hidden="true"></i></a>
+                      <a class="star" href=""><i class="fa fa-star col-sm-offset-4 col-sm-2 col-xs-1" aria-hidden="true"></i></a>
+                      <span class="col-sm-1 col-xs-1">1</span>
+                    </div>
+                  </div>
+                </section>
+              </section>
+            </section>
+
+       </section>-->
+    </section>
+  </section>
+
+    <!--Otros iconos para usar
+
+        <a id="alert-friends" href=""><i class="fa fa-bell" aria-hidden="true"></i></a>
+        <a id="search" href=""><i class="fa fa-search" aria-hidden="true"></i></a>
+        <a id="user" href=""><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+        <a id="notificación-friends" href=""><i class="fa fa-clipboard" aria-hidden="true"></i></a>-->
+
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="js/vendors/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/vendors/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+</body>
+
+</html>
