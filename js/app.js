@@ -112,10 +112,10 @@ function menu(event) {
  // console.log(val);
   if ( val >= 4 ){
    $submit.removeAttr( "disabled" );
- }
-   else if (val === 0) {
-     $submit.attr( "disabled","true" );
    }
+    else if (val === 0) {
+     $submit.attr( "disabled","true" );
+     }
  }
 
  // Mostrar imagenes
@@ -151,7 +151,7 @@ function paintPostUser(textUserVal) {
     var $imgPost = $("<img>", { "alt": "lugar-recomendado" });
     var $sectionComment = $("<section />", { "class": "col-xs-offset-1 col-xs-10 container-comment" });
     var $sectionRow = $("<section />", { "class": "row" });
-    var $divCol10 = $("div />", { "id": "container-sugg", "class": "col-xs-10" });
+    var $divCol10 = $("<div />", { "id": "container-sugg", "class": "col-xs-10" });
     var $pTime = $("<p />", { "id": "time" });
     var $pComment = $("<p />", { "id": "comment" });
     var $divCol2 = $("<div />", { "class": "col-xs-2 container-icons" });
@@ -206,13 +206,13 @@ function paintFriend (friendsIndice, photoFriend, nameFriend) {
     var $divCaption = $("<div />", { "class": "caption" });
     var $nameFriend = $("<h3 />");
     var $pButton = $("<p />");
-    var $aButton = $("<a />", { "href": "friends.html", "class": "btn btn-primary", "role": "button" });
+    var $aButton = $("<a />", {"class": "btn btn-primary", "role": "button" });
 
     /* Asignando valores a los elementos*/
     $nameFriend.text(friendsIndice.name);
     $img.append(photoFriend);
     $aButton.text("Agregar");
-    console.log(nameFriend);
+    // console.log(nameFriend);
 
     //Agregamos lo que creamos con el DOM a un elemento existente del HTML
     $divColContain.append($divContFriend);
@@ -221,17 +221,23 @@ function paintFriend (friendsIndice, photoFriend, nameFriend) {
     $divCaption.append($nameFriend);
     $divCaption.append($pButton);
     $pButton.append($aButton);
+
+    $aButton.click(function(){
+      var $friends = ("#friends");
+      console.log($friends);
+      $friends.prepend($divColContain);
+    });
+
     $(".content-friend").prepend($divColContain);
 
-    $aButton.click(addFriends);
-};
-
-function addFriends () {
-  console.log( $aButton);
-  alert( $aButton)
-   // $aButton
 
 }
+
+// function addFriends ($divColContain) {
+//   console.log($divColContain);
+//   var $friends = (".content-friend");
+//   $(".content-friend").prepend($divColContain);
+// }
 
 
 // funcion para filtrar amigos
