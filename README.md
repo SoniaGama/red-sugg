@@ -6,11 +6,9 @@
 - Proveniente de la palabra en inglés “suggestions” que significa “sugerencias”, ya que al ser una red de recomendaciones, aplicamos el sinónimo sugerencias para definir el nombre de la RS.
 
 ### Colores:
-- Amarillo ya que transmite alegría, felicidad y energía. Un buen color para el mundo del ocio y perfecto para el mundo de la comunicación y el entretenimiento.
+- Morado: Es un color enigmático, dennota energía, poder, ambición, extravagancia, lujo y sabiduría. Elegimos este color en conjunto con el lila, porque nuestra red social es precisamente una red enigmática, en la que no sabes lo que vas a encontrar cada día y será extravagante porque es original, extraña y se aparta de lo común, de lo que las demás redes ofrecen.
 
-- Azul porque se relaciona con la tecnología, y además al ser un azul oscuro, implica autenticidad, confianza, seguridad y fidelidad. Definiciones que en conjunto queremos transmitir en esta red social.
-
-- Tipografía del logotipo: Grand Hotel, es una fuente regular, que denota ser casual e incluso retro.
+- Tipografía del logotipo: Grand Hotel, es una fuente regular, que dennota ser casual e incluso retro.
 
 
 - En nuestra red social podrás encontrar recomendaciones de tus amigos sobre lugares para salir; sobre películas y productos en general, también podrás compartir tus propias recomendaciones.
@@ -26,11 +24,11 @@
 
 ### Al cerrar la navegación suplementaria nos encontramos la vista principal (newsfeed):
 - Logo de red y foto de “mi perfil”
-- Icono: Recomendaciones de tus amigos
 - Icono: Amigos cercanos
+- Icono: Recomendaciones de tus amigos
 - Menú hamburguesa desplegable: con opciones para el usuario
-- Publicaciones del usuario en body: Foto, Texto, botón de guardar, calificación.
 - Select con la opción de elegir el tipo de recomendaciones (lugares, películas, productos).
+- Publicaciones del usuario en body: Foto, Texto, botón de editar, calificación.
 
 
 ## Elementos header
