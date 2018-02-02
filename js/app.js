@@ -1,13 +1,13 @@
-//Firebase
-// var config = {
-//     apiKey: "AIzaSyCsPtmB9oyd1nKnA5cuN5dx9uGXgNgD6Hs",
-//     authDomain: "airbnb-da07c.firebaseapp.com",
-//     databaseURL: "https://airbnb-da07c.firebaseio.com",
-//     projectId: "airbnb-da07c",
-//     storageBucket: "airbnb-da07c.appspot.com",
-//     messagingSenderId: "289392080208"
-//   };
-//   firebase.initializeApp(config);
+// Firebase
+var config = {
+   apiKey: "AIzaSyCsPtmB9oyd1nKnA5cuN5dx9uGXgNgD6Hs",
+   authDomain: "airbnb-da07c.firebaseapp.com",
+   databaseURL: "https://airbnb-da07c.firebaseio.com",
+   projectId: "airbnb-da07c",
+   storageBucket: "airbnb-da07c.appspot.com",
+   messagingSenderId: "289392080208"
+};
+firebase.initializeApp(config);
 
 //elementos traidos del html
 var $submit = $("#publish");
@@ -42,10 +42,10 @@ function menu(event) {
         $(".options").addClass("hidden");
 
       }
- }
+}
 
 
- function showSugg (event) {
+function showSugg (event) {
    var $textUser = $("#text-user");
    var $textUserVal = $textUser.val();
    // var $ratingScale = ("#rating-scale");
@@ -103,9 +103,9 @@ function menu(event) {
     // if($textUserVal > 0){
     //    $("#unload-fire-base").change(readerImage);
     // }
- }
+}
 
- function disable(event){
+function disable(event){
   // var $counter = $textUserVal.length;
   // console.log($counter);
  var val = $("#text-user").val().trim().length;
@@ -116,15 +116,17 @@ function menu(event) {
     else if (val === 0) {
      $submit.attr( "disabled","true" );
      }
- }
+}
 
- // Mostrar imagenes
- function readerImage(event) {
+// Mostrar imagenes
+function readerImage(event) {
    var $textUser = $("#text-user");
    var $textUserVal = $textUser.val();
 
    var $fileImage = event.target.files[0];
+   console.log($fileImage);
    var reader = new FileReader();
+   console.log(reader);
    reader.onload = function (event){
 
      // crear elemento imagen, darle clase y attr
@@ -141,10 +143,12 @@ function menu(event) {
    // }else{
    //   $imagePublish.show("fast");
    // }
- }
+}
 
 
- //función para pintar el contenedor de neewfeed
+ 
+
+//función para pintar el contenedor de neewfeed
 function paintPostUser(textUserVal) {
     //llamando elementos a pintar
     var $divImg = $("<div />", { "id": "image-publish", "class": "col-xs-offset-1 col-xs-10 post-usser container-img" });
