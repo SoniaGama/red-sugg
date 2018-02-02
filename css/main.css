@@ -255,12 +255,7 @@ margin-left: 0px;
 margin-right: 0px;
 } */
 /*Estilos para la seccion de post de usuario*/
-.container-img {
-    background-color: rgb(255, 0, 25);
-}
-.container-icons {
-    background-color: orange;
-}
+
 .container-comment {
     background-color: #b8b2c6;
 }
