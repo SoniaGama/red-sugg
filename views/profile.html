@@ -96,14 +96,16 @@
 
                <div class="row location">
                    <div class="col-xs-3">
-                       <a class="icon-location color-purple" href=""><i class="fa fa-map-marker" aria-hidden="true"></i> Mi ubicación</a>
+                       <a class="icon-location" href=""><i class="fa fa-map-marker" aria-hidden="true"></i> Mi ubicación</a>
                    </div>
                   <div class="col-xs-5">
-                   <label class=" image-form color-purple cursor">
-                      <i class="color-purple fa fa-file-image-o fa-lg" aria-hidden="true"></i>
-                      <span>Compartenos tu imágen </span>
-                      <input id="unload-fire-base" class="hidden btn btn-default" type="file" id="exampleInputFile" accept="image/*">
+                   <label class=" image-form color-white cursor">
+                      <i class="fa fa-file-image-o fa-lg" aria-hidden="true"></i>
+                      <span>Tu imágen </span>
+                      <!-- <progress id="carga" value="0" max="100"></progress> -->
+                      <input id="upload-fire-base" class="hidden btn btn-default" type="file" accept="image/*">
                     </label>
+                    <progress id="bar-prog" value="0" max="100"></progress>
                   </div>
                    <div class="col-xs-4">
                        <input id="publish" class="btn btn-default btn-submit" type="submit" value="Publicar" disabled=true>
@@ -160,6 +162,8 @@
 
         <script type="text/javascript" src="../js/vendors/jquery-3.3.1.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../js/data.js"></script>
         <script type="text/javascript" src="../js/app.js"></script>
