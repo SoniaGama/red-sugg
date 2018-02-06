@@ -8,6 +8,8 @@ var config = {
    messagingSenderId: "289392080208"
 };
 firebase.initializeApp(config);
+var storage = firebase.storage();
+var database = firebase.database();
 
 //elementos traidos del html
 var $submit = $("#publish");
@@ -24,7 +26,8 @@ function loadPage () {
   // $(".logo-mini").click(changeIcon);
   $("#publish").click(showSugg);
   $(".input-friend").keyup(filterFriends);
-  $("#unload-fire-base").change(readerImage);
+//   $("#unload-fire-base").change(readerImage);
+  $("#upload-fire-base").change(uploadImage);
   $textUser.keyup(disable);
   // $btnLogin.click(login);
   // $btnRegistry.click(registry);
@@ -44,8 +47,44 @@ function menu(event) {
       }
 }
 
+function uploadImage (e) {    
+    var downloadURL;
+   
+    var fileImage = e.target.files[0]; //seleccionamos el archivo
+    var storageRef = firebase.storage().ref(); // creamos una referencia de almacenamiento en firebase
+    
+    //almacenamos el archivo en nuestra carpeta en firebase
+    var imagesRef = storageRef.child("images/" + fileImage.name).put(fileImage);//put() sube el archivo 
+ 
+    // Visualizamos la cargar del archivo
+    imagesRef.on('state_changed',//visualizamos el cambio de estado
+    
+      function(snapshot) {
+          $('#bar-prog').val('');
+          // Porcentaje de bytes subidos
+          var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log(progress + '% cargado');
+          $('#bar-prog').val(progress); //mostramos el proceso al usuario
+          if(progress === 100){
+              console.log('Carga finalizada');             
+          }
+          downloadURL = imagesRef.snapshot.downloadURL;
+          console.log(downloadURL);  
+          $("#publish").click(function(){
+            //   var $divImage = $("<div />")
+              var $imgPlace = $("<img>").addClass("image-publish col-xs-offset-1 col-xs-10 post-usser container-img");
 
-function showSugg (event) {
+              $imgPlace.attr('src', downloadURL);
+            //   console.log($imgPlace);
+            //   $divImage.append($imgPlace);
+              $container.append($imgPlace);
+          });                
+        },       
+        // console.log(downloadURL)        
+    );       
+ }
+
+function showSugg (e) {
    var $textUser = $("#text-user");
    var $textUserVal = $textUser.val();
    // var $ratingScale = ("#rating-scale");
@@ -57,23 +96,24 @@ function showSugg (event) {
    $textUser.attr("placeholder","Escribe tu recomendación de hoy, y no olvides subir tu foto favorita del lugar!");
     // crar elementos
     var $sectionRow = $("<section />", {"class":"row thumbnail col-xs-offset-1 col-xs-10"});
-       var $divImagePublish = $("<div />",{"class":"image-publish col-xs-offset-1 col-xs-10 post-usser container-img"});
-       var $containerComment = $("<section />", {"class":"container-comment col-xs-offset-1 col-xs-10"});
-         var $sectionRowComment = $("<section />",{"class":"row"});
-            var $divContainerSugg = $("<div />",{"class":"container-sugg col-xs-10"});
-               var $pTime = $("<p />",{"class":"time"});
-               var $pComment = $("<p />",{"class":"comment"});
-            var $divContainerIcons = $("<div />",{"class":"col-xs-2 container-icons"});
-               var $divRow = $("<div />",{"class":"row"});
-                  var $iconEdit = $("<a />", {"class":"edit"});
-                     var $iconE = $("<i />", {"class":"fa fa-pencil col-sm-3 col-xs-1"});
-                     $iconE.attr("aria-hidden","true");
-                  var $iconStar = $("<a />", {"class":"star"});
-                     var $iconS = $("<i />", {"class":"fa fa-star col-sm-offset-4 col-sm-2 col-xs-1"});
-                     $iconE.attr("aria-hidden","true");
-                  var $spanCount = $("<span />", {"class":"col-sm-1 col-xs-1"});
+    var $divImagePublish = $("<div />",{"class":"image-publish col-xs-offset-1 col-xs-10 post-usser container-img"});
+    var $containerComment = $("<section />", {"class":"container-comment col-xs-offset-1 col-xs-10"});
+    var $sectionRowComment = $("<section />",{"class":"row"});
+    var $divContainerSugg = $("<div />",{"class":"container-sugg col-xs-10"});
+    var $pTime = $("<p />",{"class":"time"});
+    var $pComment = $("<p />",{"class":"comment"});
+    var $divContainerIcons = $("<div />",{"class":"col-xs-2 container-icons"});
+    var $divRow = $("<div />",{"class":"row"});
+    var $iconEdit = $("<a />", {"class":"edit"});
+    var $iconE = $("<i />", {"class":"fa fa-pencil col-sm-3 col-xs-1"});    
+    var $iconStar = $("<a />", {"class":"star"});
+    var $iconS = $("<i />", {"class":"fa fa-star col-sm-offset-4 col-sm-2 col-xs-1"});    
+    var $spanCount = $("<span />", {"class":"col-sm-1 col-xs-1"});
 
-      var $time = new Date().toDateString(); //variable que guarda la fecha
+    $iconE.attr("aria-hidden","true");
+    $iconE.attr("aria-hidden","true");
+    
+    var $time = new Date().toDateString(); //variable que guarda la fecha
 
        // agregar contenido
     $pTime.text($time);
@@ -96,13 +136,8 @@ function showSugg (event) {
     $iconEdit.append($iconE);
     $iconStar.append($iconS);
 
-    $container.prepend($sectionRow);
-    disable();
-    // $comment.append($time);
-
-    // if($textUserVal > 0){
-    //    $("#unload-fire-base").change(readerImage);
-    // }
+    $container.append($sectionRow);
+    disable();   
 }
 
 function disable(event){
@@ -118,35 +153,30 @@ function disable(event){
      }
 }
 
-// Mostrar imagenes
-function readerImage(event) {
-   var $textUser = $("#text-user");
-   var $textUserVal = $textUser.val();
+// // Mostrar imagenes
+// function readerImage(event) {
+//    var $textUser = $("#text-user");
+//    var $textUserVal = $textUser.val();
 
-   var $fileImage = event.target.files[0];
-   console.log($fileImage);
-   var reader = new FileReader();
-   console.log(reader);
-   reader.onload = function (event){
+//    var $fileImage = event.target.files[0];
+//    console.log($fileImage);
+//    var reader = new FileReader();
+//    console.log(reader);
+//    reader.onload = function (event){
 
-     // crear elemento imagen, darle clase y attr
-     var $sectionImage = $("<section />", {"class":"image-publish post-usser container-img margin"});
-     var $imagePublish = $("<img />", {"class":" thumbnail container-image  col-xs-offset-1 col-xs-10 margin", "alt":"image"});
-     $imagePublish.attr("src", event.target.result);
+//      // crear elemento imagen, darle clase y attr
+//      var $sectionImage = $("<section />", {"class":"image-publish post-usser container-img margin"});
+//      var $imagePublish = $("<img />", {"class":" thumbnail container-image  col-xs-offset-1 col-xs-10 margin", "alt":"image"});
+//      $imagePublish.attr("src", event.target.result);
 
-     $sectionImage.prepend($imagePublish);
-     $container.prepend($sectionImage);
-   }
-   reader.readAsDataURL(this.files[0]);
-   // if($textUserVal < 1){
-   //   $imagePublish.hide();
-   // }else{
-   //   $imagePublish.show("fast");
-   // }
-}
+//      $sectionImage.prepend($imagePublish);
+//      $container.prepend($sectionImage);
+//    }
+//    reader.readAsDataURL(this.files[0]);
+// }
 
+// función para guardar imagenes en firebase
 
- 
 
 //función para pintar el contenedor de neewfeed
 function paintPostUser(textUserVal) {
