@@ -1,31 +1,33 @@
 /* clases generales */
+
 .textCenter {
-  text-align: center;
+    text-align: center;
 }
 
 .width100 {
-  width: 100%;
+    width: 100%;
 }
 
 .height {
-  height: 85vh;
+    height: 85vh;
 }
 
 .padding1opx {
-  padding: 10px;
+    padding: 10px;
 }
 
 .padding5px {
-  padding: 5px;
+    padding: 5px;
 }
 
 .m-r {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 
 .p-b {
-  padding-bottom: 2vh;
+    padding-bottom: 2vh;
 }
+
 
 /*Estilos para iniciar sesion*/
 
@@ -33,200 +35,215 @@ input::placeholder,
 textarea::placeholder,
 select,
 .color-purple {
-  color: #701F6E !important;
+    color: #701F6E !important;
 }
 
 .login-background {
-  background-color: #755496;
-  height: 100vh;
+    background-color: #755496;
+    height: 100vh;
 }
 
 .imagotipo-index {
-  padding-top: 80px;
-  padding-bottom: 30px;
-  width: 100%;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    width: 100%;
 }
 
 .btn-login {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .btn {
-  width: 100%;
+    width: 100%;
 }
 
 .background-color-color {
-  background-color: #701F6E;
-  color: #fff;
+    background-color: #701F6E;
+    color: #fff;
 }
 
 .tx-aling-rigth {
-  text-align: right;
+    text-align: right;
 }
 
 .color-white {
-  color: #fff;
+    color: #fff;
 }
+
+
 /* esilos header */
 
 .background-header {
-  background: linear-gradient(rgb(191, 100, 247), rgb(205, 152, 240));
-  height: 15vh;
+    background: linear-gradient(rgb(191, 100, 247), rgb(205, 152, 240));
+    height: 15vh;
 }
 
 .margin {
-  margin-top: 2vh;
+    margin-top: 2vh;
 }
 
 .icons {
-  border: 1px solid #fff;
-  border-radius: 50%;
-  background-color: white;
-  color: #701F6E;
-  font-size: 110%;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: white;
+    color: #701F6E;
+    font-size: 110%;
 }
 
 .icons:hover {
-  border: 1px solid #fff;
-  border-radius: 50%;
-  background-color: #701F6E;
-  color: white;
-  font-size: 110%;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: #701F6E;
+    color: white;
+    font-size: 110%;
 }
 
 .icon {
-  color: #fff;
-  cursor: pointer;
-  font-size: 180%;
-  padding: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 180%;
+    padding: 5px;
 }
 
 .icon:hover {
-  color: #701F6E;
-  cursor: pointer;
-  font-size: 180%;
-  padding: 5px;
+    color: #701F6E;
+    cursor: pointer;
+    font-size: 180%;
+    padding: 5px;
 }
 
 .cursor {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .options {
-  background-color: #701F6E;
-  color: white;
-  position: absolute;
-  padding: 10px;
-  margin-top: 6px;
-  z-index: 10;
+    background-color: #701F6E;
+    color: white;
+    position: absolute;
+    padding: 10px;
+    margin-top: 6px;
+    z-index: 10;
 }
 
 .options>a>p {
-  cursor: pointer;
-  color: white;
+    cursor: pointer;
+    color: white;
 }
 
 .options>a>p :hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .avatar-mini {
-  width: 11%;
+    width: 11%;
 }
+
 
 /*Estilos para la sección de amigos*/
 
 .margin-top {
-  margin-top: 10vh;
+    margin-top: 10vh;
 }
+
 
 /*Estilos para seccion de newsfeed*/
 
 #comment {
-  font-size: 18px;
-  color: #701F6E;
+    font-size: 18px;
+    color: #701F6E;
 }
 
 #container-sugg {
-  background-color: rgb(194, 191, 191);
-  border-radius: 5px;
+    background-color: rgb(194, 191, 191);
+    border-radius: 5px;
 }
 
 #image-publish {
-  padding-left: 0px;
+    padding-left: 0px;
 }
 
 .img-helado {
-  background-color: rgb(162, 82, 224);
-  width: 60%;
+    background-color: rgb(162, 82, 224);
+    width: 60%;
 }
 
 .contain-icons {
-  background-color: rgb(194, 191, 191);
+    background-color: rgb(194, 191, 191);
 }
 
 .sugg-friend {
-  background-color: #701F6E;
-  border-radius: 5px;
-  color: white;
+    background-color: #701F6E;
+    border-radius: 5px;
+    color: white;
 }
 
 .row>.sug-friend>p {
-  padding-top: 5px;
+    padding-top: 5px;
 }
 
 .sugg-friend>p>span {
-font-size: 20px;
+    font-size: 20px;
 }
+
 
 /*Estilos para la seccion de buscar amigos por medio del filtro*/
 
 .thumbnail>div>h3 {
-  text-align: center;
+    text-align: center;
 }
+
+
 /* modal */
 
 .load-image {
-  border-radius: 50%;
-  border: 1px solid #701F6E;
-  font-size: 150%;
+    border-radius: 50%;
+    border: 1px solid #701F6E;
+    font-size: 150%;
 }
 
 .image-load:hover {
-  background-color: #701F6E;
-  color: #fff;
-
+    background-color: #701F6E;
+    color: #fff;
 }
 
 .color-white {
-  color: #fff;
+    color: #fff;
 }
+
 
 /* subir imagen */
+
 .image-form:hover {
-  color: rgb(162, 82, 224);
+    color: rgb(162, 82, 224);
 }
+
 
 /* fonts */
+
 .font-dosis {
-  font-family: 'Dosis', sans-serif;
-}
-.font-cabin {
-  font-family: 'Cabin', sans-serif;
+    font-family: 'Dosis', sans-serif;
 }
 
+.font-cabin {
+    font-family: 'Cabin', sans-serif;
+}
+
+
 /*Estilos para seccion de recommendacion */
+
 .location {
-  background-color: #523470;
-  color: white;
-  height: 8vh;
-  padding-top: 5px;
+    background-color: #523470;
+    color: white;
+    height: 8vh;
+    padding-top: 5px;
 }
+
 .icon-location {
-  color: white;
-  padding-top: 5px;
-  margin-right: 0px;
+    color: white;
+    padding-top: 5px;
+    margin-right: 0px;
 }
+
 .btn {
-  padding: 2px 10px;
+    padding: 2px 10px;
 }
