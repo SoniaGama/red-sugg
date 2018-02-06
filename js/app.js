@@ -1,13 +1,13 @@
 //Firebase
-// var config = {
-//     apiKey: "AIzaSyCsPtmB9oyd1nKnA5cuN5dx9uGXgNgD6Hs",
-//     authDomain: "airbnb-da07c.firebaseapp.com",
-//     databaseURL: "https://airbnb-da07c.firebaseio.com",
-//     projectId: "airbnb-da07c",
-//     storageBucket: "airbnb-da07c.appspot.com",
-//     messagingSenderId: "289392080208"
-//   };
-//   firebase.initializeApp(config);
+var config = {
+    apiKey: "AIzaSyCsPtmB9oyd1nKnA5cuN5dx9uGXgNgD6Hs",
+    authDomain: "airbnb-da07c.firebaseapp.com",
+    databaseURL: "https://airbnb-da07c.firebaseio.com",
+    projectId: "airbnb-da07c",
+    storageBucket: "airbnb-da07c.appspot.com",
+    messagingSenderId: "289392080208"
+};
+firebase.initializeApp(config);
 
 //elementos traidos del html
 var $submit = $("#publish");
@@ -19,15 +19,17 @@ var $textUser = $("#text-user");
 var $textUserVal = $textUser.val();
 
 
-function loadPage () {
-  $("#menu-bars").click(menu);
-  // $(".logo-mini").click(changeIcon);
-  $("#publish").click(showSugg);
-  $(".input-friend").keyup(filterFriends);
-  $("#unload-fire-base").change(readerImage);
-  $textUser.keyup(disable);
-  // $btnLogin.click(login);
-  // $btnRegistry.click(registry);
+function loadPage() {
+    $("#menu-bars").click(menu);
+    // $(".logo-mini").click(changeIcon);
+    $("#publish").click(showSugg);
+    $(".input-friend").keyup(filterFriends);
+    $("#unload-fire-base").change(readerImage);
+    $textUser.keyup(disable);
+    // $btnLogin.click(login);
+    // $btnRegistry.click(registry);
+    //authGoogle(); //llamando a la funcion de autentificación, ejemplo lms
+    firebase.auth();
 
 }
 
@@ -41,41 +43,41 @@ function menu(event) {
         $(".options").removeClass("show");
         $(".options").addClass("hidden");
 
-      }
- }
+    }
+}
 
 
- function showSugg (event) {
-   var $textUser = $("#text-user");
-   var $textUserVal = $textUser.val();
-   // var $ratingScale = ("#rating-scale");
-   var $scale = parseInt($("#rating-scale").val());
+function showSugg(event) {
+    var $textUser = $("#text-user");
+    var $textUserVal = $textUser.val();
+    // var $ratingScale = ("#rating-scale");
+    var $scale = parseInt($("#rating-scale").val());
 
-   //traer Elementos
-   $textUser.val("");
+    //traer Elementos
+    $textUser.val("");
 
-   $textUser.attr("placeholder","Escribe tu recomendación de hoy, y no olvides subir tu foto favorita del lugar!");
+    $textUser.attr("placeholder", "Escribe tu recomendación de hoy, y no olvides subir tu foto favorita del lugar!");
     // crar elementos
-    var $sectionRow = $("<section />", {"class":"row thumbnail col-xs-offset-1 col-xs-10"});
-       var $divImagePublish = $("<div />",{"class":"image-publish col-xs-offset-1 col-xs-10 post-usser container-img"});
-       var $containerComment = $("<section />", {"class":"container-comment col-xs-offset-1 col-xs-10"});
-         var $sectionRowComment = $("<section />",{"class":"row"});
-            var $divContainerSugg = $("<div />",{"class":"container-sugg col-xs-10"});
-               var $pTime = $("<p />",{"class":"time"});
-               var $pComment = $("<p />",{"class":"comment"});
-            var $divContainerIcons = $("<div />",{"class":"col-xs-2 container-icons"});
-               var $divRow = $("<div />",{"class":"row"});
-                  var $iconEdit = $("<a />", {"class":"edit"});
-                     var $iconE = $("<i />", {"class":"fa fa-pencil col-sm-3 col-xs-1"});
-                     $iconE.attr("aria-hidden","true");
-                  var $iconStar = $("<a />", {"class":"star"});
-                     var $iconS = $("<i />", {"class":"fa fa-star col-sm-offset-4 col-sm-2 col-xs-1"});
-                     $iconE.attr("aria-hidden","true");
-                  var $spanCount = $("<span />", {"class":"col-sm-1 col-xs-1"});
+    var $sectionRow = $("<section />", { "class": "row thumbnail col-xs-offset-1 col-xs-10" });
+    var $divImagePublish = $("<div />", { "class": "image-publish col-xs-offset-1 col-xs-10 post-usser container-img" });
+    var $containerComment = $("<section />", { "class": "container-comment col-xs-offset-1 col-xs-10" });
+    var $sectionRowComment = $("<section />", { "class": "row" });
+    var $divContainerSugg = $("<div />", { "class": "container-sugg col-xs-10" });
+    var $pTime = $("<p />", { "class": "time" });
+    var $pComment = $("<p />", { "class": "comment" });
+    var $divContainerIcons = $("<div />", { "class": "col-xs-2 container-icons" });
+    var $divRow = $("<div />", { "class": "row" });
+    var $iconEdit = $("<a />", { "class": "edit" });
+    var $iconE = $("<i />", { "class": "fa fa-pencil col-sm-3 col-xs-1" });
+    $iconE.attr("aria-hidden", "true");
+    var $iconStar = $("<a />", { "class": "star" });
+    var $iconS = $("<i />", { "class": "fa fa-star col-sm-offset-4 col-sm-2 col-xs-1" });
+    $iconE.attr("aria-hidden", "true");
+    var $spanCount = $("<span />", { "class": "col-sm-1 col-xs-1" });
 
-      var $time = new Date().toDateString(); //variable que guarda la fecha
+    var $time = new Date().toDateString(); //variable que guarda la fecha
 
-       // agregar contenido
+    // agregar contenido
     $pTime.text($time);
     $pComment.text($textUserVal);
     $spanCount.text($scale);
@@ -103,48 +105,47 @@ function menu(event) {
     // if($textUserVal > 0){
     //    $("#unload-fire-base").change(readerImage);
     // }
- }
+}
 
- function disable(event){
-  // var $counter = $textUserVal.length;
-  // console.log($counter);
- var val = $("#text-user").val().trim().length;
- // console.log(val);
-  if ( val >= 4 ){
-   $submit.removeAttr( "disabled" );
-   }
-    else if (val === 0) {
-     $submit.attr( "disabled","true" );
-     }
- }
+function disable(event) {
+    // var $counter = $textUserVal.length;
+    // console.log($counter);
+    var val = $("#text-user").val().trim().length;
+    // console.log(val);
+    if (val >= 4) {
+        $submit.removeAttr("disabled");
+    } else if (val === 0) {
+        $submit.attr("disabled", "true");
+    }
+}
 
- // Mostrar imagenes
- function readerImage(event) {
-   var $textUser = $("#text-user");
-   var $textUserVal = $textUser.val();
+// Mostrar imagenes
+function readerImage(event) {
+    var $textUser = $("#text-user");
+    var $textUserVal = $textUser.val();
 
-   var $fileImage = event.target.files[0];
-   var reader = new FileReader();
-   reader.onload = function (event){
+    var $fileImage = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(event) {
 
-     // crear elemento imagen, darle clase y attr
-     var $sectionImage = $("<section />", {"class":"image-publish post-usser container-img margin"});
-     var $imagePublish = $("<img />", {"class":" thumbnail container-image  col-xs-offset-1 col-xs-10 margin", "alt":"image"});
-     $imagePublish.attr("src", event.target.result);
+        // crear elemento imagen, darle clase y attr
+        var $sectionImage = $("<section />", { "class": "image-publish post-usser container-img margin" });
+        var $imagePublish = $("<img />", { "class": " thumbnail container-image  col-xs-offset-1 col-xs-10 margin", "alt": "image" });
+        $imagePublish.attr("src", event.target.result);
 
-     $sectionImage.prepend($imagePublish);
-     $container.prepend($sectionImage);
-   }
-   reader.readAsDataURL(this.files[0]);
-   // if($textUserVal < 1){
-   //   $imagePublish.hide();
-   // }else{
-   //   $imagePublish.show("fast");
-   // }
- }
+        $sectionImage.prepend($imagePublish);
+        $container.prepend($sectionImage);
+    }
+    reader.readAsDataURL(this.files[0]);
+    // if($textUserVal < 1){
+    //   $imagePublish.hide();
+    // }else{
+    //   $imagePublish.show("fast");
+    // }
+}
 
 
- //función para pintar el contenedor de neewfeed
+//función para pintar el contenedor de neewfeed
 function paintPostUser(textUserVal) {
     //llamando elementos a pintar
     var $divImg = $("<div />", { "id": "image-publish", "class": "col-xs-offset-1 col-xs-10 post-usser container-img" });
@@ -198,7 +199,7 @@ function paintPostUser(textUserVal) {
 // }
 
 //funciones para filtrar amigos y pintarlos
-function paintFriend (friendsIndice, photoFriend, nameFriend) {
+function paintFriend(friendsIndice, photoFriend, nameFriend) {
     /* Crear elementos con DOM html*/
     var $divColContain = $("<div />", { "id": "div-friend", "class": "col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4" })
     var $divContFriend = $("<div />", { "class": "thumbnail" });
@@ -206,7 +207,7 @@ function paintFriend (friendsIndice, photoFriend, nameFriend) {
     var $divCaption = $("<div />", { "class": "caption" });
     var $nameFriend = $("<h3 />");
     var $pButton = $("<p />");
-    var $aButton = $("<a />", {"class": "btn btn-primary", "role": "button" });
+    var $aButton = $("<a />", { "class": "btn btn-primary", "role": "button" });
 
     /* Asignando valores a los elementos*/
     $nameFriend.text(friendsIndice.name);
@@ -222,10 +223,10 @@ function paintFriend (friendsIndice, photoFriend, nameFriend) {
     $divCaption.append($pButton);
     $pButton.append($aButton);
 
-    $aButton.click(function(){
-      var $friends = ("#friends");
-      console.log($friends);
-      $friends.prepend($divColContain);
+    $aButton.click(function() {
+        var $friends = ("#friends");
+        console.log($friends);
+        $friends.prepend($divColContain);
     });
 
     $(".content-friend").prepend($divColContain);
@@ -269,6 +270,65 @@ var filterFriends = function(friendsIndice) {
     //paintFriend(friendsIndice, photoFriend, nameFriend);
     console.log("filter", filtederedFriends)
 }
+
+//Funciones para la autentificación de google, ejemplo lms
+/*$("#login").click(function(e) {
+    e.preventDefault();
+    authGoogle();
+});
+
+var authGoogle = function() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    authentication(provider);
+};
+
+var authentication = function(provider) {
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+            var token = result.credential.accessToken;
+            var user = result.user;
+        })
+        .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            var email = error.email;
+            var credential = error.credential;
+        });
+}*/
+
+//Funciones firebase, ejemplo del video
+var mailUser = document.getElementById("email-user");
+var password = document.getElementById("password");
+var btnLogin = document.getElementById("login");
+var btnSignUp = document.getElementById("sign-up");
+
+btnLogin.addEventListener("click", e => {
+    e.preventDefault();
+    var email = mailUser.value;
+    var pass = password.value;
+    var auth = firebase.auth();
+
+    var promise = auth.signInWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+});
+
+btnSignUp.addEventListener("click", e => {
+    e.preventDefault();
+    var email = mailUser.value;
+    var pass = password.value;
+    var auth = firebase.auth();
+
+    var promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+});
+
+/*firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        location.href = "views/newsfeed.html";
+    }
+});*/
+
+
+
 
 
 
